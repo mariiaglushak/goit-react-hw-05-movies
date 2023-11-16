@@ -56,7 +56,7 @@ const MovieDetails = () => {
               ? `https://image.tmdb.org/t/p/w500${movieDetails?.backdrop_path}`
               : DefaultImage
           }
-          width="400px"
+          width="100%"
           alt={movieDetails?.title}
         />
         <SectionDetails>
