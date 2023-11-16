@@ -15,6 +15,7 @@ import {
   DetailsList,
   ListBtn,
   ItemListBtn,
+  ReliseDate,
 } from './MovieDetailsStyle';
 
 const MovieDetails = () => {
@@ -61,6 +62,7 @@ const MovieDetails = () => {
         <SectionDetails>
           <Title>{movieDetails?.title}</Title>
           <UserScore>User Score : {rating}%</UserScore>
+          <ReliseDate>Release date: {movieDetails?.release_date}</ReliseDate>
           <h2>Overview</h2>
           <p>{movieDetails?.overview}</p>
           <h2>Genres</h2>

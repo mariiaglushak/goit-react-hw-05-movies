@@ -50,3 +50,8 @@ export const ListBtn = styled.ul`
 export const ItemListBtn = styled.li`
   margin-right: 5px;
 `;
+
+export const ReliseDate = styled.p`
+  font-size: 18px;
+  font-weight: bold;
+`;
