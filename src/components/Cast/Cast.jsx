@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { FetchRequest } from 'Services/request';
 import { DefaultImage } from 'components/DefaulImage/ingex';
 
+import { Name, ListCast, ItemCast, MainName, Character } from './CastStyle';
+
 const Cast = () => {
   const [castDetails, setCastDetails] = useState(null);
   const { movieId } = useParams();
@@ -14,20 +16,20 @@ const Cast = () => {
         const data = await FetchRequest(URL_CAST);
         const { cast } = data.data;
         setCastDetails(cast);
-        console.log(data);
       } catch (err) {
         console.log(err);
       }
     };
     requestCast();
   }, [movieId]);
+
   return (
-    <ul>
+    <ListCast>
       {castDetails?.length === 0 ? (
-        <p>We don't have cast of this movie 😪</p>
+        <p>We don't have cast of this movie </p>
       ) : (
         castDetails?.map(el => (
-          <li key={el.name}>
+          <ItemCast key={el.name}>
             <img
               src={
                 el.profile_path
@@ -37,12 +39,16 @@ const Cast = () => {
               width="200px"
               alt={el.name}
             />
-            <p>{el.name}</p>
-            {el.character && <p>Character: {el.character}</p>}
-          </li>
+            <MainName>{el.name}</MainName>
+            {el.character && (
+              <Character>
+                Character:<Name>{el.character}</Name>
+              </Character>
+            )}
+          </ItemCast>
         ))
       )}
-    </ul>
+    </ListCast>
   );
 };
 

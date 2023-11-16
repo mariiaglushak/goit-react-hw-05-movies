@@ -1,7 +1,7 @@
-import { FetchRequest } from 'Services/request';
-import { BiSearchAlt2 } from 'react-icons/bi';
 import { useSearchParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import { FetchRequest } from 'Services/request';
+import { BiSearchAlt2 } from 'react-icons/bi';
 import MovieList from 'components/MovieList/MovieList';
 
 import Loader from 'components/Loader/Loader';
@@ -11,8 +11,6 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchedMovies, setSearchedMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  // const location = useLocation();
 
   const nameFilm = searchParams.get('query');
 

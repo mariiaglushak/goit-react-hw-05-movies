@@ -13,11 +13,12 @@ const Home = () => {
     setIsLoading(true);
 
     const movieTime = async () => {
+
       const URL_TRENDING = '/trending/movie/day';
       try {
         const data = await FetchRequest(URL_TRENDING);
         const { results } = data.data;
-        console.log(results);
+       
         setTendingMovie(results);
       } catch (err) {
         console.log(err);

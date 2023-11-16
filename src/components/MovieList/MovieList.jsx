@@ -5,6 +5,8 @@ import css from './MovieList.module.css';
 
 const MovieList = ({ films }) => {
   const location = useLocation();
+
+  
   return (
     <div>
       <ul className={css.list}>

@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useParams, Link, useLocation } from 'react-router-dom';
+import { useParams, Link, useLocation, Outlet } from 'react-router-dom';
 import { FetchRequest } from 'Services/request';
 import Button from 'components/Button/Button';
 import Loader from 'components/Loader/Loader';
-// import Cast from 'components/Cast/Cast';
 
 import { DefaultImage } from 'components/DefaulImage/ingex';
 import {
@@ -14,6 +13,8 @@ import {
   UserScore,
   AddInfo,
   DetailsList,
+  ListBtn,
+  ItemListBtn,
 } from './MovieDetailsStyle';
 
 const MovieDetails = () => {
@@ -31,7 +32,6 @@ const MovieDetails = () => {
         const details = await FetchRequest(DETAILS_URL);
         const { data } = details;
         setMovieDetails(data);
-        console.log(data);
       } catch (err) {
         console.log(err);
       } finally {
@@ -73,14 +73,20 @@ const MovieDetails = () => {
       </WrapDetails>
       <div>
         <AddInfo>Additional information</AddInfo>
-        <Link to="cast">
-          <Button text="Cast" />
-        </Link>
-        <Link to="reviews">
-          <Button text="Reviews" />
-        </Link>
+        <ListBtn>
+          <ItemListBtn>
+            <Link to="cast">
+              <Button text="Cast" />
+            </Link>
+          </ItemListBtn>
+          <ItemListBtn>
+            <Link to="reviews">
+              <Button text="Reviews" />
+            </Link>
+          </ItemListBtn>
+        </ListBtn>
+        <Outlet />
       </div>
-      деталі
     </MainWrapper>
   );
 };

@@ -1,5 +1,8 @@
 import { Grid } from 'react-loader-spinner';
 import { SpeenerBlock } from './LoaderStyle';
+
+
+
 const Loader = () => {
   return (
     <SpeenerBlock>
@@ -16,4 +19,6 @@ const Loader = () => {
     </SpeenerBlock>
   );
 };
+
+
 export default Loader;
