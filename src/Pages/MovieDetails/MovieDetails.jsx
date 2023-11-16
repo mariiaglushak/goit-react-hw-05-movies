@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { useParams, Link, useLocation, Outlet } from 'react-router-dom';
 import { FetchRequest } from 'Services/request';
 import Button from 'components/Button/Button';
@@ -87,7 +87,9 @@ const MovieDetails = () => {
             </Link>
           </ItemListBtn>
         </ListBtn>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </div>
     </MainWrapper>
   );
