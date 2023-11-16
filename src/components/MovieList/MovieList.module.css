@@ -1,0 +1,28 @@
+.list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 12px;
+    /* gap:20px; */
+    padding: 0 200px 0 200px;
+    margin: 20px 0 0 0;
+}
+.item{
+    max-width:200px;
+    list-style-type: none;
+    background-color: #d53a9d;
+    border: 2px solid #d53a9d;
+    border-radius: 3px;
+    transition: transform 0.4s;
+}
+.title{
+  margin: 0; 
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  
+}
+.link{
+  text-decoration: none;
+  color: #3b0d5e;
+}
